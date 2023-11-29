@@ -236,7 +236,7 @@ html{
 .container {
   position: relative;
   height: 86vh;
-  width: 50%;
+  width: 47%;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -319,7 +319,7 @@ html{
 
 
   /* four */
-  .four{
+  /* .four{
     background: url(../img/Main4background.png) no-repeat 0 0/cover;
     min-height: 100vh;
   }
@@ -327,8 +327,15 @@ html{
     font-size: 4rem;
     font-family: "Agbalumo";
     margin-left: 80px;
-    padding-top: 30px;
-    margin-bottom: 60px;
+    padding-top: 50px;
+    margin-bottom: 25px;
+  }
+  .four>p{
+    font-size: 1.2rem;
+    margin-bottom: 3%;
+    font-family: 'Pretendard-Regular';
+    box-sizing: border-box;
+    margin-left: 11%;
   }
   .skill{
     display: flex;
@@ -365,18 +372,18 @@ html{
   font-weight: bold;
   margin-bottom: 50px;
 }
-
 .skill_list>li>p{
   font-weight: 600;
-  width: 295px;
+  width: 56%;
   height: 130px;
+  font-size: 1.1rem;
 }
 .skill_list>li>figure{
   position: absolute;
   top: 0;
   left: 0;
-  width: 159px;
-  transform: translate(348px, 10px);
+  width: 32%;
+  transform: translate(205%, 10px);
 }
 .skill_list circle{
     fill: none;
@@ -386,8 +393,8 @@ html{
 .skill_list svg{
     transform: rotate(-90deg);
     /* js에서 돌리면 위에서 부터 안나와서 svg를 돌림 */
-}
-.skillper{
+/* }
+.skill_list>li>.skillper{
   font-size: 0;
 }
 .cat3Img{
@@ -402,26 +409,160 @@ html{
 @keyframes cat3{
   0% {left:0px; top:0px;}
   100% {left:90%; top:0px;}
+}  */
+
+
+/* fourOne */
+.fourOne{
+  background: url(../img/Main4background.png) no-repeat 0 0/cover;
+  min-height: 100vh;
+}
+.fourOne>h1{
+  font-family:'DNFBitBitv2';
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-size: 3rem;
+  padding-top: 360px;
 }
 
+/* four 2 */
+.four{
+  background: url(../img/Main4background.png) no-repeat 0 0/cover;
+  min-height: 130vh;
+}
+.four>h1{
+  font-size: 4rem;
+  font-family: "Agbalumo";
+  margin-left: 80px;
+  margin-bottom: 25px;
+  padding-top: 3%;
+}
+.skill{
+  font-family: "Rajdhani";
+  /* font-family: 'Pretendard-Regular'; */
+  font-size: 1.2rem;
+}
+.skill>ul>li>h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.distance_per{
+
+  width: 61%;
+}
+.distance_per>section>img{
+  width: 7%;
+}
+.distance_per>.progress{
+  width: 100%;
+  height: 6px;
+  background: #CCC98F;
+}
+.skill_list>li{
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+.skill_list>li>h3{
+  width: 24%;
+  text-align: center;
+}
+.skill_list>li>p{
+  margin-top: 90px;
+  width: 10%;
+  text-align: center;
+  font-weight: bold;
+}
+.distance_per>section{
+  display: flex;
+}
+.distance_per>section>div{
+  width: 0;
+  /* transition: all 5s ease 0s; */
+}
+.skill_move1.on{
+  width: 80%;
+}
+.skill_move2.on{
+  width: 70%;
+}
+.skill_move3.on{
+  width: 50%;
+}
+.skill_move4.on{
+  width: 80%;
+}
+.skill_move5.on{
+  width: 100%;
+}
+.skill_move6.on{
+  width: 100%;
+}
+
+/* fiveOne */
+.fiveOne{
+  background: url(../img/Main5background.png) no-repeat 0 0/cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.fiveOne>h1{
+  font-size: 4rem;
+  font-family: "Agbalumo";
+  text-align: center;
+  padding-top: 4%;
+  margin-bottom: 5%;
+}
+.fiveOne>.fiveOnese{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fiveSeLeft{
+  margin-right: 6%;
+  margin-bottom: 2%;
+}
+.fiveOnese>.fiveSeLeft>h1{
+  font-size: 5rem;
+  font-family: 'PuradakGentleGothicR';
+  text-align: center;
+}
+.fiveOnese>.fiveSeLeft>p{
+  font-size: 1.7rem;
+  text-align: center;
+  font-family: 'PuradakGentleGothicR';
+  margin-top: 14px;
+}
+.fiveSeRight{
+  height: 248px;
+}
+.fiveSeRight>p{
+  font-size: 1.8rem;
+  font-family: 'Pretendard-Regular';
+  line-height: 1.5;
+}
+.fiveOne>p{
+  padding: 3% 0 16% 0;
+  text-align: center;
+  transition: all 1.5s ease 0s;
+  transform: translateY(300px);
+  opacity: 0;
+}
+.fiveOne>p.on{
+  transform: translateY(0px);
+  opacity: 1;
+}
 
 
 /* five */
 .five{
   background: url(../img/Main5background.png) no-repeat 0 0/cover;
   font-family: 'PuradakGentleGothicR';
-  min-height: 100vh;
-}
-.five>h1{
-  font-size: 4rem;
-  font-family: "Agbalumo";
-  margin-left: 80px;
-  padding-top: 30px;
-  margin-bottom: 60px;
+  min-height: 80vh;
+  background-attachment: fixed;
 }
 .fiveDiv{
   display: flex;
-  margin-top: 4%;
 }
 .fiveImg{
   width: 37%;
@@ -486,6 +627,7 @@ html{
 .cat4Img{
   width: 4.7%;
   margin: 0 auto;
+  transform: translateY(60px);
 }
 
 /* six */
@@ -624,13 +766,13 @@ html{
 }
 
 .bannerLeft{
-transition: all 1s ease 0s;
-transform: translateX(-20px);
-opacity: 0;
+  transition: all 1s ease 0s;
+  transform: translateX(-20px);
+  opacity: 0;
 }
 .bannerLeft.on{
-transform: translateX(0px);
-opacity: 1;
+  transform: translateX(0px);
+  opacity: 1;
 }
 .bannerRight{
   transition: all 1s ease 0s;
@@ -688,9 +830,9 @@ opacity: 1;
 }
 .popup .sevenImage,
 .popup .shadow {
-    transform: rotateX(45deg) rotateZ(-25deg);
-    transform-style: preserve-3d;
-    transition: .3s;
+  transform: rotateX(45deg) rotateZ(-25deg);
+  transform-style: preserve-3d;
+  transition: .3s;
   }
 .popup .sevenImage {
   position: relative;

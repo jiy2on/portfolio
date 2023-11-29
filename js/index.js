@@ -116,7 +116,7 @@ $(document).ready(function(){
     function rain(){
         let cloud = document.querySelector(`.cloud`);
         let e = document.createElement(`div`);
-        let left = Math.floor(Math.random() * deviceWidth/2) - 450;
+        let left = Math.floor(Math.random() * deviceWidth/2) - 400;
         let size = Math.random() * 3.2;
         let duration = Math.random() * 3;
         let random_co1 = Math.random() * 155 + 100;
@@ -143,40 +143,92 @@ $(document).ready(function(){
 
     //  four
 
-    let stateSkill = false
+    // let stateSkill = false
     
-    function skillRotate(){
+    // function skillRotate(){
 
-    $(".skill_list>li").each(function(){
-        let per = Number($(this).find(".skillper").text())
-        let count = 0
-        let thisList = $(this)
-        let pathLength = thisList.find("circle").get(0).getTotalLength()
-        thisList.find("circle").css("stroke-dasharray",pathLength)
-        thisList.find("circle").css("stroke-dashoffset",pathLength)
+    // $(".skill_list>li").each(function(){
+    //     let per = Number($(this).find(".skillper").text())
+    //     let count = 0
+    //     let thisList = $(this)
+    //     let pathLength = thisList.find("circle").get(0).getTotalLength()
+    //     thisList.find("circle").css("stroke-dasharray",pathLength)
+    //     thisList.find("circle").css("stroke-dashoffset",pathLength)
 
-        let timer = setInterval(function(){
-            count++
-            thisList.find(".skillper").html(count)
-            thisList.find("circle").css("stroke-dashoffset",pathLength-(pathLength*count/100))
-            if(count>=per){
-                clearInterval(timer)
-                }
-            },10)
+    //     let timer = setInterval(function(){
+    //         count++
+    //         thisList.find(".skillper").html(count)
+    //         thisList.find("circle").css("stroke-dashoffset",pathLength-(pathLength*count/100))
+    //         if(count>=per){
+    //             clearInterval(timer)
+    //             }
+    //         },10)
+    //     })
+    //     return true
+    // }
+
+    // $(window).scroll(function(){
+    //     let sct = $(window).scrollTop()
+    //     let devHeight = $(window).height()
+    //     let skillTop = $(".skill_list").offset().top
+        
+    //     if(sct+devHeight*0.5>skillTop){
+    //         if(stateSkill == false){
+    //             stateSkill = skillRotate()          
+    //         }
+    //     }
+    // })
+    function showGraph(){
+        $(".skill_list>li").each(function(){
+            let count = 0
+            let per = $(this).find(".skillPer").text()
+            let _this = $(this)
+    
+            let timer = setInterval(function(){
+                
+                count++
+                _this.find(".skillPer").html(count)
+                _this.find(".skill_move").css("width",count+"%")
+    
+                if(count>=per){clearInterval(timer)}
+            },30)
+            console.log(per)
         })
         return true
     }
+    
 
+    let graphState = false
     $(window).scroll(function(){
-        let sct = $(window).scrollTop()
-        let devHeight = $(window).height()
-        let skillTop = $(".skill_list").offset().top
-        
-        if(sct+devHeight*0.5>skillTop){
-            if(stateSkill == false){
-                stateSkill = skillRotate()          
-            }
+
+        scrTop = $(window).scrollTop()
+        let fourTop = $(".four").offset().top
+        if(scrTop+devHeight*0.5 >= fourTop && graphState==false){
+            graphState = showGraph()
         }
+
+    })
+
+    // five
+    $(window).scroll(function(){
+
+        scrTop = $(window).scrollTop()
+
+        $(".fiveOne>p").each(function(){
+            if(scrTop+(devHeight*0.6)>=$(this).offset().top){
+                $(this).addClass("on")
+            }else{
+                $(this).removeClass("on")
+            }
+        })
+
+        $(".fiveOne>p").each(function(){
+            if(scrTop+(devHeight)>=$(this).offset().top){
+                $(this).addClass("on")
+            }else{
+                $(this).removeClass("on")
+            }
+        })
     })
 
 
