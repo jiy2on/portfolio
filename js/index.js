@@ -143,6 +143,37 @@ $(document).ready(function(){
 
     //  four
 
+
+    $(window).scroll(function(){
+        sct = $(window).scrollTop() 
+        
+        let scrollBoxTop = $(".fourOne").offset().top
+        let distance = sct -  scrollBoxTop
+        let scrollboxHeight = $(".fourOne").height() //스크롤박스 높이를 계산
+        let elvHeight = $(".four_elv").height() // 걸리는 화면 높이 계산
+        let aniEnd = scrollboxHeight - elvHeight // 스크롤박스 안에서 지나온 높이 
+        let per  = distance / aniEnd // 0~1
+        let per100 = per*140
+        let per360 = per*360
+
+         if(distance<0){
+            console.log("도달하지 못함")
+            $(".four_elv").removeClass("fixed")
+            $(".four_elv").removeClass("bottom")
+            }
+        if(distance>=0 && distance<aniEnd){
+            console.log("중간지점 안에 있는 상태")
+            $(".four_elv").removeClass("bottom")
+            $(".four_elv").addClass("fixed")
+            $(".bgbox_four").css("width",`${per100}vw`).css("height",`${per100}vw`).css("transform",`translate(-50%,-50%)rotate(${per360}deg)`)
+        }
+        if(distance>=aniEnd){
+                console.log("벗어난 상태")
+                $(".four_elv").removeClass("fixed")
+                $(".four_elv").addClass("bottom")
+        }
+     })
+
     // let stateSkill = false
     
     // function skillRotate(){

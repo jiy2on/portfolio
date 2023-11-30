@@ -146,6 +146,7 @@ html{
     align-items: center; */
     font-family: "Rajdhani";
     position: relative;  
+    overflow: hidden;
 }
 .third:before{
   z-index: -1;
@@ -414,16 +415,53 @@ html{
 
 /* fourOne */
 .fourOne{
-  background: url(../img/Main4background.png) no-repeat 0 0/cover;
+  height: 4000px;
+  position: relative;
+  background: url(../img/Main1background.png) no-repeat 0 0/ cover;
+  background-attachment: fixed;
   min-height: 100vh;
 }
-.fourOne>h1{
+.four_elv{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.four_elv.fixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.four_elv.bottom{
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+.bgbox_four {
+  width: 0vw;
+  height: 0vw;
+  background: red;
+  background: url(../img/Main4background.png) repeat 50% 50%/contain;
+  background-attachment: fixed;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  /* z-index: -1; */
+}
+.fourOne h1{
   font-family:'DNFBitBitv2';
   text-align: center;
   height: 100%;
   width: 100%;
   font-size: 3rem;
   padding-top: 360px;
+  position:relative;
+  z-index: 1;
 }
 
 /* four 2 */
