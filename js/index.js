@@ -240,6 +240,27 @@ $(document).ready(function(){
 
     })
 
+    $(window).scroll(function(){
+
+        scrTop = $(window).scrollTop()
+
+        $(".four_txt_left,.four_txt_right").each(function(){
+            if(scrTop+(devHeight*0.6)>=$(this).offset().top){
+                $(this).addClass("on")
+            }else{
+                $(this).removeClass("on")
+            }
+        })
+
+        $(".txtbox").each(function(){
+            if(scrTop+(devHeight)>=$(this).offset().top){
+                $(this).addClass("on")
+            }else{
+                $(this).removeClass("on")
+            }
+        })
+    })
+
     // five
     $(window).scroll(function(){
 
